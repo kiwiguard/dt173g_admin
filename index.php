@@ -9,7 +9,7 @@ if(isset($_POST['username'])) {
     $password = strip_tags($password);
 
     // check username and password input (hardcoded for now)
-    if($username == 'admin' && $password == 'password') {
+    if($username == '******' && $password == '******') {
         $_SESSION['username'] = $username;
     
         header('Location: admin.php');
