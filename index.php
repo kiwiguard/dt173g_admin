@@ -21,13 +21,14 @@ if(isset($_POST['username'])) {
 include('includes/header.php');
 ?>
 
-<h1>Logga in</h1>
+<h2>Logga in</h2>
 <form method="POST">
     <label for="username">Användarnamn:</label>
-    <input type="text" id="username" name="username">
+    <input type="text" id="username" name="username"> <br>
     <label for="password">Lösenord:</label>
     <input type="password" id="password" name="password">
-    <input type="submit" id="login" value="Logga in">
+    <br>
+    <input type="submit" class="button" id="login" value="Logga in">
 </form>
 
 <?PHP

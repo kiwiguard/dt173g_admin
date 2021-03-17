@@ -3,10 +3,10 @@
 /***************** Access variables *****************/
 
 //development
-const projectFetchURL = 'http://localhost/DT173G_Projekt/rest/api/project.php';
+// const projectFetchURL = 'http://localhost/DT173G_Projekt/rest/api/project.php';
 
 //deployment
-// const projectFetchURL = 'https://susanne-nilsson.se/src/api/project.php'
+const projectFetchURL = 'https://susanne-nilsson.se/src/api/project.php'
 
 
 //update div functions
@@ -23,7 +23,7 @@ let pTitleInput = document.getElementById('pTitle');
 let pDescInput = document.getElementById('pDescription');
 let pUrlInput = document.getElementById('pUrl');
 let imgInput = document.getElementById('pImg');
-const imgFpath = '../uploads/'
+const imgFpath = '../../img/'
 
 //eventlisteners
 window.onload = getProject(); // load stored data on load
@@ -84,16 +84,15 @@ function getOneProjToUpdate(id) {
         updateProjectDiv.innerHTML +=
         `<form method="POST" enctype="multipart/form-data">
             <h3>Uppdatera post</h3>
-            <label for="pTitle">Titel</label>
-            <input type="text" name="pTitle" id="newTitle" value="${res.pTitle}">
-            <label for="pDescription">Beskrivning</label>
-            <input type="text" name="pDescription" id="newpDescription" value="${res.pDescription}">
-            <label for="pUrl">Ange Url till projektet</label>
-            <input type="text" name="pUrl" id="newpUrl" value="${res.pUrl}" require>
-            <label for="img">Ange filnamn för bilden</label>
-            <input type="text" name="img" id="newpImg" value="${res.pImg}">
+            <label for="pTitle">Titel</label><br>
+            <input type="text" name="pTitle" id="newTitle" value="${res.pTitle}"><br>
+            <label for="pDescription">Beskrivning</label><br>
+            <textarea name="pDescription" id="newpDescription" value="${res.pDescription}"></textarea><br>
+            <label for="pUrl">Ange Url till projektet</label><br>
+            <input type="text" name="pUrl" id="newpUrl" value="${res.pUrl}" require><br>
+            <label for="img">Ange filnamn för bilden</label><br>
+            <input type="text" name="img" id="newpImg" value="${res.pImg}"><br>
             <input type="submit" id="updateProjBtn" onClick="updateProject(${res.id})" value="Uppdatera projekt">
-            <br>
             <input type="submit" id="closeBtn" onClick="closeProjectDiv()" value="Avbryt">
         </form>`
     })

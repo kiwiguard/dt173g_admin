@@ -3,10 +3,10 @@
 /***************** Access variables *****************/
 
 //development
-const eduFetchURL = 'http://localhost/DT173G_Projekt/rest/api/education.php';
+// const eduFetchURL = 'http://localhost/DT173G_Projekt/rest/api/education.php';
 
 //deployment
-// const eduFetchURL = 'https://susanne-nilsson.se/src/api/education.php'
+const eduFetchURL = 'https://susanne-nilsson.se/src/api/education.php'
 
 
 //update div functions
@@ -91,18 +91,17 @@ function getOneEduToUpdate(id) {
         updateEduDiv.innerHTML +=
         `<form method="GET">
             <h3>Uppdatera post</h3>
-            <label for="university">Skola</label>
-            <input type="text" name="university" id="newUni" value="${res.university}">
-            <label for="eduName">Programmets/kursens nam</label>
-            <input type="text" name="eduName" id="newEduName" value="${res.eduName}">
-            <label for="eDescription">Beskrivning</label>
-            <input type="text" name="eDescription" id="neweDescription" value="${res.eDescription}">
-            <label for="start_date">Utbildningen började</label>
-            <input type="date" name="start_date" id="newStart" value="${res.start_date}">
-            <label for="end_date">Utbildningen avslutades</label>
-            <input type="date" name="end_date" id="newEnd" value="${res.end_date}">
+            <label for="university">Skola</label><br>
+            <input type="text" name="university" id="newUni" value="${res.university}"><br>
+            <label for="eduName">Programmets/kursens nam</label><br>
+            <input type="text" name="eduName" id="newEduName" value="${res.eduName}"><br>
+            <label for="eDescription">Beskrivning</label><br>
+            <textarea name="eDescription" id="neweDescription" value="${res.eDescription}"></textarea<br>
+            <label for="start_date">Utbildningen började</label><br>
+            <input type="date" name="start_date" id="newStart" value="${res.start_date}"><br>
+            <label for="end_date">Utbildningen avslutades</label><br>
+            <input type="date" name="end_date" id="newEnd" value="${res.end_date}"><br>
             <input type="submit" id="updateEduBtn" onClick="updateEdu(${res.id})" value="Uppdatera utbildning">
-            <br>
             <input type="submit" id="closeBtn" onClick="closeDiv()" value="Avbryt">
         </form>`
     })

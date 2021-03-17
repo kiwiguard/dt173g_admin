@@ -3,10 +3,10 @@
 /***************** Access variables *****************/
 
 //development
-const workFetchURL = 'http://localhost/DT173G_Projekt/rest/api/work.php';
+// const workFetchURL = 'http://localhost/DT173G_Projekt/rest/api/work.php';
 
 //deployment
-// const workFetchURL = 'https://susanne-nilsson.se/src/api/work.php'
+const workFetchURL = 'https://susanne-nilsson.se/src/api/work.php'
 
 
 //update div functions
@@ -91,18 +91,17 @@ function getOneWorkToUpdate(id) {
         updateWorkDiv.innerHTML +=
         `<form method="POST">
             <h3>Uppdatera post</h3>
-            <label for="employer">Företag</label>
-            <input type="text" name="employer" id="newEmployer" value="${res.employer}">
-            <label for="workTitle">Titel</label>
-            <input type="text" name="workTitle" id="newWorkTitle" value="${res.workTitle}">
-            <label for="description">Beskrivning</label>
-            <input type="text" name="description" id="newDescription" value="${res.description}">
-            <label for="start_date">Anställningen började</label>
-            <input type="date" name="start_date" id="newWorkStart" value="${res.workStart_date}">
-            <label for="end_date">Anställningen avslutades</label>
-            <input type="date" name="end_date" id="newWorkEnd" value="${res.workEnd_date}">
+            <label for="employer">Företag</label><br>
+            <input type="text" name="employer" id="newEmployer" value="${res.employer}"><br>
+            <label for="workTitle">Titel</label><br>
+            <input type="text" name="workTitle" id="newWorkTitle" value="${res.workTitle}"><br>
+            <label for="description">Beskrivning</label><br>
+            <textarea name="description" id="newDescription" value="${res.description}"></textarea><br>
+            <label for="start_date">Anställningen började</label><br>
+            <input type="date" name="start_date" id="newWorkStart" value="${res.workStart_date}"><br>
+            <label for="end_date">Anställningen avslutades</label><br>
+            <input type="date" name="end_date" id="newWorkEnd" value="${res.workEnd_date}"><br>
             <input type="submit" id="updateWorkBtn" onClick="updateWork(${res.id})" value="Uppdatera anställning">
-            <br>
             <input type="submit" id="closeBtn" onClick="closeUpdateWorkDiv()" value="Avbryt">
         </form>`
     })
